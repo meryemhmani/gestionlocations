@@ -6,43 +6,42 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 @Data
 @Entity
-@Table(name="clinet")
+@Table(name="client")
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @NotNull
     @Column(name = "client_tx_nom")
     private String nomClient;
-    @NotNull
-    @Column(name = "client_tx_prennom")
-    private String PrenomClient;
 
     @NotNull
-     @Column(name = "client_tx_email")
+    @Column(name = "client_tx_prenom")
+    private String prenomClient;
+
+    @NotNull
+    @Column(name = "client_tx_email")
     private String emailClient;
+
     @NotNull
     @Column(name = "client_num_tlf")
     private Long tlfClient;
+
+    @Column(name = "client_fax")
     private Long faxClient;
 
     @NotNull
     @Column(name = "client_adresse")
-    private String AdresseClient;
+    private String adresseClient;
+
     @NotNull
     @Column(name = "client_matr_fiscale")
-    private String Matricule_fiscale;
-
-
-
-
-
+    private String matriculeFiscale;
 }

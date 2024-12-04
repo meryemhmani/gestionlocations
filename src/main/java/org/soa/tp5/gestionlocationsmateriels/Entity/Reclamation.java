@@ -13,6 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Reclamation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -26,6 +27,6 @@ public class Reclamation {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name = "client_id", nullable = false) // clé étrangère
+    @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 }
